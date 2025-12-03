@@ -1,0 +1,208 @@
+.container {
+  padding: 0;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 0.25rem 0;
+}
+
+.header p {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.connectionCard {
+  margin-bottom: 1.5rem;
+}
+
+.connectionInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.entity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.entityIcon {
+  font-size: 2rem;
+}
+
+.entityLabel {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.entityName {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.connectionArrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-accent-success);
+  font-size: 1.5rem;
+}
+
+.connectionStatus {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.noConnection {
+  text-align: center;
+  padding: 3rem;
+}
+
+.noConnection .icon {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.noConnection h3 {
+  margin: 1rem 0 0.5rem;
+  color: var(--color-text-primary);
+}
+
+.noConnection p {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.pendingCard {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-accent-warning);
+}
+
+.requestDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.requestField {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fieldLabel {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  min-width: 100px;
+}
+
+.pendingNote {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  padding: 1rem;
+  background: var(--color-bg-tertiary);
+  border-radius: 0.5rem;
+}
+
+.requestIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.requestIntro p {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.historyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--color-bg-secondary);
+  border-radius: 0.5rem;
+}
+
+.historyDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.historyDate {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.historyReason {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.historyRetailer {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.retailerList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.retailerItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--color-bg-tertiary);
+  border-radius: 0.5rem;
+}
+

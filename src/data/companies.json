@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ca18b690-920d-4ff5-96ba-a5b689a8a934",
+    "name": "Acme Corporation",
+    "apiKey": "ak_6ba29bfb532d6998cd090c190dbde518b374bc7eca884a36b83524373832010a",
+    "webhookUrl": "https://acme.example.com/webhooks",
+    "createdAt": "2025-12-03T18:02:57.074Z",
+    "updatedAt": "2025-12-03T18:02:57.074Z",
+    "isActive": true
+  },
+  {
+    "id": "166cdf44-9cff-416a-aa62-2afaa4f57729",
+    "name": "GlobalTech Inc",
+    "apiKey": "ak_3dc167c05a7adeb6496e3d0c01795a8bea6f38bc87a3f8c5fe3ef39edb03a851",
+    "createdAt": "2025-12-03T18:02:57.074Z",
+    "updatedAt": "2025-12-03T18:02:57.074Z",
+    "isActive": true
+  },
+  {
+    "id": "128ba0a0-feae-4cb3-977d-c1e97db6b633",
+    "name": "StartupXYZ",
+    "apiKey": "ak_f913a4fb348306a097771f428137620a92373c13961a20e60dc331a460024817",
+    "createdAt": "2025-12-03T18:02:57.074Z",
+    "updatedAt": "2025-12-03T18:02:57.074Z",
+    "isActive": true
+  }
+]

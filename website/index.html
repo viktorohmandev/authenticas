@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Authenticas - Secure Corporate Purchase Verification for B2B retail transactions">
+  <meta name="keywords" content="corporate purchasing, B2B authentication, spending limits, retail verification">
+  <title>Authenticas - Secure Corporate Purchase Verification</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="10" fill="url(#logo-gradient)"/>
+            <path d="M20 8L28 12V20C28 25.5 24.5 30 20 32C15.5 30 12 25.5 12 20V12L20 8Z" stroke="white" stroke-width="2" fill="none"/>
+            <path d="M16 20L18.5 22.5L24 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6366f1"/>
+                <stop offset="1" stop-color="#8b5cf6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span>Authenticas</span>
+      </a>
+      
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="nav-menu" id="nav-menu">
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#integration" class="nav-link">Integration</a>
+        <a href="docs/api.md" class="nav-link">API Docs</a>
+        <a href="#contact" class="nav-btn">Request Access</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient hero-gradient-1"></div>
+      <div class="hero-gradient hero-gradient-2"></div>
+      <div class="hero-grid"></div>
+    </div>
+    
+    <div class="hero-container">
+      <div class="hero-badge animate-fade-in">
+        <span class="badge-dot"></span>
+        B2B Authentication Platform
+      </div>
+      
+      <h1 class="hero-title animate-fade-in delay-1">
+        Secure Corporate<br>
+        <span class="gradient-text">Purchase Verification</span>
+      </h1>
+      
+      <p class="hero-description animate-fade-in delay-2">
+        Enable retailers to verify employee purchasing permissions in real-time. 
+        Set spending limits, track transactions, and maintain complete audit trails 
+        for corporate purchases.
+      </p>
+      
+      <div class="hero-actions animate-fade-in delay-3">
+        <a href="#contact" class="btn btn-primary btn-lg">
+          <span>Get Started</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="docs/api.md" class="btn btn-secondary btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+          <span>API Documentation</span>
+        </a>
+      </div>
+      
+      <div class="hero-stats animate-fade-in delay-4">
+        <div class="hero-stat">
+          <span class="stat-value">50ms</span>
+          <span class="stat-label">Avg Response Time</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-value">99.9%</span>
+          <span class="stat-label">Uptime SLA</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-value">256-bit</span>
+          <span class="stat-label">Encryption</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-visual animate-fade-in delay-3">
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="terminal-title">verifyPurchase.sh</span>
+        </div>
+        <div class="terminal-body">
+          <pre><code><span class="code-comment"># Verify a corporate purchase</span>
+<span class="code-keyword">curl</span> -X POST https://api.authenticas.com/verifyPurchase \
+  -H <span class="code-string">"X-API-Key: ak_live_..."</span> \
+  -d <span class="code-string">'{
+    "userId": "usr_abc123",
+    "companyId": "cmp_xyz789",
+    "amount": 149.99
+  }'</span>
+
+<span class="code-comment"># Response</span>
+{
+  <span class="code-key">"success"</span>: <span class="code-boolean">true</span>,
+  <span class="code-key">"status"</span>: <span class="code-string">"approved"</span>,
+  <span class="code-key">"remainingBudget"</span>: <span class="code-number">350.01</span>
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Simple Integration</span>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-description">
+          Get started in minutes with our straightforward three-step process
+        </p>
+      </div>
+      
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="step-title">Register Your Company</h3>
+          <p class="step-description">
+            Create an account, add your company, and receive your unique API key 
+            for secure authentication.
+          </p>
+        </div>
+        
+        <div class="step-connector">
+          <svg viewBox="0 0 100 20" fill="none">
+            <path d="M0 10h90M85 5l10 5-10 5" stroke="currentColor" stroke-width="2" stroke-dasharray="5,5"/>
+          </svg>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h3 class="step-title">Add Your Team</h3>
+          <p class="step-description">
+            Invite employees, assign roles, and set individual monthly spending 
+            limits for precise budget control.
+          </p>
+        </div>
+        
+        <div class="step-connector">
+          <svg viewBox="0 0 100 20" fill="none">
+            <path d="M0 10h90M85 5l10 5-10 5" stroke="currentColor" stroke-width="2" stroke-dasharray="5,5"/>
+          </svg>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="step-title">Verify Purchases</h3>
+          <p class="step-description">
+            Retailers call our API at checkout. We verify permissions instantly 
+            and return approval or denial.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section section-dark" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Powerful Features</span>
+        <h2 class="section-title">Everything You Need</h2>
+        <p class="section-description">
+          Comprehensive tools for corporate purchase management
+        </p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Spending Limits</h3>
+          <p class="feature-description">
+            Set monthly spending caps per employee. Automatic resets on the first 
+            of each month with real-time balance tracking.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Complete Audit Trail</h3>
+          <p class="feature-description">
+            Every action is logged with timestamps, before/after states, and 
+            full context for compliance and reporting.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Real-time Webhooks</h3>
+          <p class="feature-description">
+            Get instant notifications for approvals, denials, and limit exceeded 
+            events with automatic retry logic.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <path d="M3 9h18M9 21V9"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Multiple Dashboards</h3>
+          <p class="feature-description">
+            Separate portals for admins, retailers, and companies with 
+            role-appropriate features and views.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Secure API Keys</h3>
+          <p class="feature-description">
+            Per-company API keys with instant regeneration. Full JWT authentication 
+            for dashboard access.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Lightning Fast</h3>
+          <p class="feature-description">
+            Sub-50ms response times for purchase verification. Built for 
+            high-volume retail environments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration Guide -->
+  <section class="section" id="integration">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">For Retailers</span>
+        <h2 class="section-title">Easy Integration</h2>
+        <p class="section-description">
+          Add Authenticas verification to your POS in minutes
+        </p>
+      </div>
+      
+      <div class="integration-content">
+        <div class="integration-steps">
+          <div class="integration-step">
+            <div class="integration-step-header">
+              <span class="integration-step-number">1</span>
+              <h3>Get API Credentials</h3>
+            </div>
+            <p>Obtain your API key from the company that wants to enable corporate purchasing at your store.</p>
+          </div>
+          
+          <div class="integration-step">
+            <div class="integration-step-header">
+              <span class="integration-step-number">2</span>
+              <h3>Add Verification Call</h3>
+            </div>
+            <p>Call our <code>/verifyPurchase</code> endpoint when an employee presents their corporate ID.</p>
+          </div>
+          
+          <div class="integration-step">
+            <div class="integration-step-header">
+              <span class="integration-step-number">3</span>
+              <h3>Handle Response</h3>
+            </div>
+            <p>Process the approval or denial and complete the transaction accordingly.</p>
+          </div>
+          
+          <div class="integration-step">
+            <div class="integration-step-header">
+              <span class="integration-step-number">4</span>
+              <h3>Set Up Webhooks</h3>
+            </div>
+            <p>Optionally receive real-time notifications about transaction outcomes.</p>
+          </div>
+        </div>
+        
+        <div class="integration-code">
+          <div class="code-tabs">
+            <button class="code-tab active" data-tab="curl">cURL</button>
+            <button class="code-tab" data-tab="javascript">JavaScript</button>
+            <button class="code-tab" data-tab="python">Python</button>
+          </div>
+          
+          <div class="code-content" id="code-curl">
+            <pre><code><span class="code-keyword">curl</span> -X POST \
+  https://api.authenticas.com/verifyPurchase \
+  -H <span class="code-string">"Content-Type: application/json"</span> \
+  -H <span class="code-string">"X-API-Key: ak_live_your_key_here"</span> \
+  -d <span class="code-string">'{
+    "userId": "employee-uuid",
+    "companyId": "company-uuid",
+    "amount": 149.99
+  }'</span></code></pre>
+          </div>
+          
+          <div class="code-content hidden" id="code-javascript">
+            <pre><code><span class="code-keyword">const</span> response = <span class="code-keyword">await</span> <span class="code-function">fetch</span>(
+  <span class="code-string">'https://api.authenticas.com/verifyPurchase'</span>,
+  {
+    method: <span class="code-string">'POST'</span>,
+    headers: {
+      <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>,
+      <span class="code-string">'X-API-Key'</span>: <span class="code-string">'ak_live_your_key_here'</span>
+    },
+    body: <span class="code-function">JSON.stringify</span>({
+      userId: <span class="code-string">'employee-uuid'</span>,
+      companyId: <span class="code-string">'company-uuid'</span>,
+      amount: <span class="code-number">149.99</span>
+    })
+  }
+);
+
+<span class="code-keyword">const</span> result = <span class="code-keyword">await</span> response.<span class="code-function">json</span>();
+
+<span class="code-keyword">if</span> (result.success) {
+  <span class="code-comment">// Purchase approved!</span>
+  console.<span class="code-function">log</span>(<span class="code-string">'Remaining budget:'</span>, result.data.remainingBudget);
+} <span class="code-keyword">else</span> {
+  <span class="code-comment">// Purchase denied</span>
+  console.<span class="code-function">log</span>(<span class="code-string">'Reason:'</span>, result.data.reason);
+}</code></pre>
+          </div>
+          
+          <div class="code-content hidden" id="code-python">
+            <pre><code><span class="code-keyword">import</span> requests
+
+response = requests.<span class="code-function">post</span>(
+    <span class="code-string">'https://api.authenticas.com/verifyPurchase'</span>,
+    headers={
+        <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>,
+        <span class="code-string">'X-API-Key'</span>: <span class="code-string">'ak_live_your_key_here'</span>
+    },
+    json={
+        <span class="code-string">'userId'</span>: <span class="code-string">'employee-uuid'</span>,
+        <span class="code-string">'companyId'</span>: <span class="code-string">'company-uuid'</span>,
+        <span class="code-string">'amount'</span>: <span class="code-number">149.99</span>
+    }
+)
+
+result = response.<span class="code-function">json</span>()
+
+<span class="code-keyword">if</span> result[<span class="code-string">'success'</span>]:
+    <span class="code-keyword">print</span>(<span class="code-string">f"Approved! Remaining: ${result['data']['remainingBudget']}"</span>)
+<span class="code-keyword">else</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">f"Denied: {result['data']['reason']}"</span>)</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documentation Links -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Resources</span>
+        <h2 class="section-title">Documentation</h2>
+        <p class="section-description">
+          Everything you need to integrate and manage Authenticas
+        </p>
+      </div>
+      
+      <div class="docs-grid">
+        <a href="docs/api.md" class="doc-card">
+          <div class="doc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+          </div>
+          <h3>API Reference</h3>
+          <p>Complete endpoint documentation with examples</p>
+          <span class="doc-link">Read docs →</span>
+        </a>
+        
+        <a href="docs/webhooks.md" class="doc-card">
+          <div class="doc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+            </svg>
+          </div>
+          <h3>Webhooks Guide</h3>
+          <p>Event types, payloads, and retry logic</p>
+          <span class="doc-link">Read docs →</span>
+        </a>
+        
+        <a href="docs/onboarding.md" class="doc-card">
+          <div class="doc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3>Onboarding Guide</h3>
+          <p>Step-by-step setup instructions</p>
+          <span class="doc-link">Read docs →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Request Access -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <span class="section-badge">Get Started</span>
+          <h2 class="section-title">Request Access</h2>
+          <p class="section-description">
+            Ready to streamline corporate purchasing? Fill out the form and our 
+            team will get you set up within 24 hours.
+          </p>
+          
+          <div class="contact-features">
+            <div class="contact-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Free trial period</span>
+            </div>
+            <div class="contact-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>No credit card required</span>
+            </div>
+            <div class="contact-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Dedicated support</span>
+            </div>
+            <div class="contact-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Full API access</span>
+            </div>
+          </div>
+        </div>
+        
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="John" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Work Email</label>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company" placeholder="Acme Corporation" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="type">I am a...</label>
+            <select id="type" name="type" required>
+              <option value="">Select your role</option>
+              <option value="company">Company Admin</option>
+              <option value="retailer">Retailer</option>
+              <option value="developer">Developer</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" name="message" rows="3" placeholder="Tell us about your use case..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-lg btn-full">
+            <span>Request Access</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="10" fill="url(#footer-logo-gradient)"/>
+                <path d="M20 8L28 12V20C28 25.5 24.5 30 20 32C15.5 30 12 25.5 12 20V12L20 8Z" stroke="white" stroke-width="2" fill="none"/>
+                <path d="M16 20L18.5 22.5L24 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#6366f1"/>
+                    <stop offset="1" stop-color="#8b5cf6"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span>Authenticas</span>
+          </a>
+          <p>Secure corporate purchase verification for modern businesses.</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#integration">Integration</a>
+            <a href="#">Pricing</a>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Documentation</h4>
+            <a href="docs/api.md">API Reference</a>
+            <a href="docs/webhooks.md">Webhooks</a>
+            <a href="docs/onboarding.md">Onboarding</a>
+            <a href="#">Changelog</a>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Authenticas. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

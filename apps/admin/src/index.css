@@ -1,0 +1,6 @@
+/* Admin-specific styles */
+.admin-accent {
+  --color-accent-primary: #8b5cf6;
+  --color-accent-primary-hover: #a78bfa;
+}
+

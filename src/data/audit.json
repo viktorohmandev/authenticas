@@ -1,0 +1,110 @@
+[
+  {
+    "id": "ea22f043-ee00-40db-8cc0-c35bac8fada3",
+    "timestamp": "2025-12-03T18:09:50.881Z",
+    "action": "auth.login",
+    "performedBy": "43a96fff-e40c-4117-b1af-06358f8f810c",
+    "targetType": "user",
+    "targetId": "43a96fff-e40c-4117-b1af-06358f8f810c"
+  },
+  {
+    "id": "df9fe870-19c1-4e12-a82b-4acaf57273e9",
+    "timestamp": "2025-12-03T18:12:34.122Z",
+    "action": "auth.login",
+    "performedBy": "59996759-fb6f-4da5-b4d2-8d19f898fe29",
+    "targetType": "user",
+    "targetId": "59996759-fb6f-4da5-b4d2-8d19f898fe29"
+  },
+  {
+    "id": "a0153f24-0355-4a4d-b16d-12b29eed5145",
+    "timestamp": "2025-12-03T18:14:36.023Z",
+    "action": "auth.login",
+    "performedBy": "78371e2d-c174-47fe-94ff-6d3f68fcf55c",
+    "targetType": "user",
+    "targetId": "78371e2d-c174-47fe-94ff-6d3f68fcf55c"
+  },
+  {
+    "id": "37c3f60a-82a0-4663-b704-3cf79d308ffa",
+    "timestamp": "2025-12-03T18:38:38.801Z",
+    "action": "auth.login",
+    "performedBy": "59996759-fb6f-4da5-b4d2-8d19f898fe29",
+    "targetType": "user",
+    "targetId": "59996759-fb6f-4da5-b4d2-8d19f898fe29"
+  },
+  {
+    "id": "882c08ec-a13f-486a-a87f-8a4aeca64678",
+    "timestamp": "2025-12-03T18:39:29.312Z",
+    "action": "auth.login",
+    "performedBy": "78371e2d-c174-47fe-94ff-6d3f68fcf55c",
+    "targetType": "user",
+    "targetId": "78371e2d-c174-47fe-94ff-6d3f68fcf55c"
+  },
+  {
+    "id": "5be30204-9bf5-4e0e-9493-a1a151bd0062",
+    "timestamp": "2025-12-03T18:54:49.583Z",
+    "action": "purchase.approved",
+    "performedBy": "78371e2d-c174-47fe-94ff-6d3f68fcf55c",
+    "targetType": "transaction",
+    "targetId": "457320f0-2ebc-423c-a9c3-e8919c439888",
+    "beforeState": {
+      "spentThisMonth": 0
+    },
+    "afterState": {
+      "spentThisMonth": 3000
+    },
+    "metadata": {
+      "amount": 3000
+    }
+  },
+  {
+    "id": "f33eb5ac-3ee8-42cc-bc9d-a53f42d4ba0a",
+    "timestamp": "2025-12-03T18:55:40.530Z",
+    "action": "company.disconnect.requested",
+    "performedBy": "78371e2d-c174-47fe-94ff-6d3f68fcf55c",
+    "targetType": "disconnect_request",
+    "targetId": "ca18b690-920d-4ff5-96ba-a5b689a8a934",
+    "metadata": {
+      "retailerId": "60c70786-3bc8-4e77-bf05-8bd6ab3b9cd1"
+    }
+  },
+  {
+    "id": "b93705ed-428e-4ff6-a3c5-7f987f26eda3",
+    "timestamp": "2025-12-03T18:56:24.831Z",
+    "action": "company.disconnect.approved",
+    "performedBy": "59996759-fb6f-4da5-b4d2-8d19f898fe29",
+    "targetType": "disconnect_request",
+    "targetId": "ca18b690-920d-4ff5-96ba-a5b689a8a934",
+    "metadata": {
+      "retailerId": "60c70786-3bc8-4e77-bf05-8bd6ab3b9cd1"
+    }
+  },
+  {
+    "id": "80f1da43-d386-4997-99d6-b3b9481d3265",
+    "timestamp": "2025-12-03T18:58:55.647Z",
+    "action": "purchase.denied",
+    "performedBy": "3acf805a-9664-41e1-b948-3c1bae81e1f3",
+    "targetType": "transaction",
+    "targetId": "c90a7fbc-64c3-430f-a63c-042ba22f67d8",
+    "metadata": {
+      "amount": 1400,
+      "reason": "limit_exceeded"
+    }
+  },
+  {
+    "id": "e63cc088-0456-460c-960a-4fbd11d2b4ac",
+    "timestamp": "2025-12-03T18:59:04.850Z",
+    "action": "purchase.approved",
+    "performedBy": "3acf805a-9664-41e1-b948-3c1bae81e1f3",
+    "targetType": "transaction",
+    "targetId": "c81cb011-5aec-4089-9222-44aae1070f8d",
+    "beforeState": {
+      "spentThisMonth": 200
+    },
+    "afterState": {
+      "spentThisMonth": 1500
+    },
+    "metadata": {
+      "amount": 1300
+    }
+  }
+]

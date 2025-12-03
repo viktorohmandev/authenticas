@@ -1,0 +1,139 @@
+.container {
+  animation: fadeIn var(--transition-normal) ease-out;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.header {
+  margin-bottom: var(--space-8);
+}
+
+.header h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-2);
+}
+
+.header p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.userGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+.userCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.userHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+}
+
+.userEmail {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.spendingInfo {
+  background: var(--color-bg-tertiary);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.spendingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.value {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.progressBar {
+  height: 6px;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+.editForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.editActions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.editButton {
+  width: 100%;
+}
+
+.emptyMessage {
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: var(--space-6);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+

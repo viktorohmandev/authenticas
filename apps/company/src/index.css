@@ -1,0 +1,6 @@
+/* Company-specific styles */
+.company-accent {
+  --color-accent-primary: #10b981;
+  --color-accent-primary-hover: #34d399;
+}
+

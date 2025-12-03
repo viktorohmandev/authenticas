@@ -1,0 +1,28 @@
+[
+  {
+    "id": "60c70786-3bc8-4e77-bf05-8bd6ab3b9cd1",
+    "name": "TechMart Retail",
+    "apiKey": "ak_98f3988dfe95d1e85252b0846f3bce65ff3e50eef2ec5463715b47376513af65",
+    "webhookUrl": "https://techmart.example.com/webhooks",
+    "createdAt": "2025-12-03T18:02:57.074Z",
+    "updatedAt": "2025-12-03T18:02:57.074Z",
+    "isActive": true
+  },
+  {
+    "id": "8be0d2e6-3ca1-4db1-92e8-ecbad84e3f1e",
+    "name": "OfficePro Supplies",
+    "apiKey": "ak_6aaebe36cfdc781ba7b9b838ccfcaa4d1893562e9f471b870f171201a4865ea1",
+    "webhookUrl": "https://officepro.example.com/webhooks",
+    "createdAt": "2025-12-03T18:02:57.074Z",
+    "updatedAt": "2025-12-03T18:02:57.074Z",
+    "isActive": true
+  },
+  {
+    "id": "2aedc08e-000f-4bbb-b831-59ccefd7748a",
+    "name": "ElectroWorld",
+    "apiKey": "ak_9d8945dff4a753583bbc2f3e9e8648331d57fbbf4f6b653a1e7982665b71e1d4",
+    "createdAt": "2025-12-03T18:02:57.074Z",
+    "updatedAt": "2025-12-03T18:02:57.074Z",
+    "isActive": true
+  }
+]

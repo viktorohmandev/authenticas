@@ -1,0 +1,38 @@
+[
+  {
+    "id": "e11bccf1-d849-4632-b95a-321994fad11a",
+    "companyId": "ca18b690-920d-4ff5-96ba-a5b689a8a934",
+    "retailerId": "60c70786-3bc8-4e77-bf05-8bd6ab3b9cd1",
+    "status": "inactive",
+    "createdAt": "2025-12-03T18:02:57.074Z",
+    "updatedAt": "2025-12-03T18:56:24.819Z"
+  },
+  {
+    "id": "a52ca577-648f-4795-8424-0fdbaf19b244",
+    "companyId": "ca18b690-920d-4ff5-96ba-a5b689a8a934",
+    "retailerId": "8be0d2e6-3ca1-4db1-92e8-ecbad84e3f1e",
+    "status": "active",
+    "createdAt": "2025-12-03T18:02:57.074Z"
+  },
+  {
+    "id": "2666d96e-95b8-4b9a-8260-af9514cbd560",
+    "companyId": "166cdf44-9cff-416a-aa62-2afaa4f57729",
+    "retailerId": "60c70786-3bc8-4e77-bf05-8bd6ab3b9cd1",
+    "status": "active",
+    "createdAt": "2025-12-03T18:02:57.074Z"
+  },
+  {
+    "id": "7ebc6e99-6077-4c02-8df2-753630d75ff8",
+    "companyId": "128ba0a0-feae-4cb3-977d-c1e97db6b633",
+    "retailerId": "8be0d2e6-3ca1-4db1-92e8-ecbad84e3f1e",
+    "status": "active",
+    "createdAt": "2025-12-03T18:02:57.074Z"
+  },
+  {
+    "id": "725c4428-0539-48c5-b0d0-96aa6bbfd6a6",
+    "companyId": "128ba0a0-feae-4cb3-977d-c1e97db6b633",
+    "retailerId": "2aedc08e-000f-4bbb-b831-59ccefd7748a",
+    "status": "active",
+    "createdAt": "2025-12-03T18:02:57.074Z"
+  }
+]

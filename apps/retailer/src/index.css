@@ -1,0 +1,6 @@
+/* Retailer-specific styles */
+.retailer-accent {
+  --color-accent-primary: #22d3ee;
+  --color-accent-primary-hover: #67e8f9;
+}
+

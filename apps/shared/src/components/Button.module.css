@@ -1,0 +1,132 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.sm {
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.875rem;
+  height: 32px;
+}
+
+.md {
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.9375rem;
+  height: 40px;
+}
+
+.lg {
+  padding: var(--space-3) var(--space-6);
+  font-size: 1rem;
+  height: 48px;
+}
+
+/* Variants */
+.primary {
+  background: linear-gradient(135deg, var(--color-accent-primary), #8b5cf6);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--color-accent-primary-hover), #9d7af8);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.secondary {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--color-bg-hover);
+  border-color: var(--color-border-hover);
+}
+
+.outline {
+  background: transparent;
+  color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+}
+
+.outline:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-color: transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+.danger {
+  background: var(--color-accent-error);
+  color: white;
+  border-color: transparent;
+}
+
+.danger:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+/* Loading */
+.loading {
+  pointer-events: none;
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner svg {
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Icon */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 18px;
+  height: 18px;
+}
+

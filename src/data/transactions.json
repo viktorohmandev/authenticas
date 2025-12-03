@@ -1,0 +1,113 @@
+[
+  {
+    "id": "4f056951-1b96-4fdd-8e5a-a514e2a6127c",
+    "userId": "eecb65e3-bdf2-43a6-a21f-b3e5de6bd8ad",
+    "companyId": "ca18b690-920d-4ff5-96ba-a5b689a8a934",
+    "retailerId": "60c70786-3bc8-4e77-bf05-8bd6ab3b9cd1",
+    "amount": 150,
+    "status": "approved",
+    "timestamp": "2025-12-03T18:02:57.074Z",
+    "balanceBefore": 0,
+    "balanceAfter": 150
+  },
+  {
+    "id": "b602c848-8249-4c34-8bc0-31e12b019630",
+    "userId": "eecb65e3-bdf2-43a6-a21f-b3e5de6bd8ad",
+    "companyId": "ca18b690-920d-4ff5-96ba-a5b689a8a934",
+    "retailerId": "8be0d2e6-3ca1-4db1-92e8-ecbad84e3f1e",
+    "amount": 100,
+    "status": "approved",
+    "timestamp": "2025-12-03T18:02:57.074Z",
+    "balanceBefore": 150,
+    "balanceAfter": 250
+  },
+  {
+    "id": "91f49a2a-8622-4b5b-aa88-2de0df8fa65b",
+    "userId": "d7b3fe19-6aec-474c-b102-1e975fa42610",
+    "companyId": "ca18b690-920d-4ff5-96ba-a5b689a8a934",
+    "retailerId": "60c70786-3bc8-4e77-bf05-8bd6ab3b9cd1",
+    "amount": 500,
+    "status": "approved",
+    "timestamp": "2025-12-03T18:02:57.074Z",
+    "balanceBefore": 0,
+    "balanceAfter": 500
+  },
+  {
+    "id": "9525c45b-accd-421b-b42d-19db3f98d2de",
+    "userId": "d7b3fe19-6aec-474c-b102-1e975fa42610",
+    "companyId": "ca18b690-920d-4ff5-96ba-a5b689a8a934",
+    "retailerId": "8be0d2e6-3ca1-4db1-92e8-ecbad84e3f1e",
+    "amount": 300,
+    "status": "approved",
+    "timestamp": "2025-12-03T18:02:57.074Z",
+    "balanceBefore": 500,
+    "balanceAfter": 800
+  },
+  {
+    "id": "478d2def-8b46-4e31-afa4-c0239c175867",
+    "userId": "3acf805a-9664-41e1-b948-3c1bae81e1f3",
+    "companyId": "166cdf44-9cff-416a-aa62-2afaa4f57729",
+    "retailerId": "60c70786-3bc8-4e77-bf05-8bd6ab3b9cd1",
+    "amount": 200,
+    "status": "approved",
+    "timestamp": "2025-12-03T18:02:57.074Z",
+    "balanceBefore": 0,
+    "balanceAfter": 200
+  },
+  {
+    "id": "19fa39f0-de8a-4ded-9c17-e8f16c3a3907",
+    "userId": "a6516ed1-2cae-458e-850c-65acc25a161f",
+    "companyId": "128ba0a0-feae-4cb3-977d-c1e97db6b633",
+    "retailerId": "8be0d2e6-3ca1-4db1-92e8-ecbad84e3f1e",
+    "amount": 75,
+    "status": "approved",
+    "timestamp": "2025-12-03T18:02:57.074Z",
+    "balanceBefore": 0,
+    "balanceAfter": 75
+  },
+  {
+    "id": "5c23ceb2-5edc-41ae-b855-beecedd7bf65",
+    "userId": "a6516ed1-2cae-458e-850c-65acc25a161f",
+    "companyId": "128ba0a0-feae-4cb3-977d-c1e97db6b633",
+    "retailerId": "2aedc08e-000f-4bbb-b831-59ccefd7748a",
+    "amount": 125,
+    "status": "approved",
+    "timestamp": "2025-12-03T18:02:57.074Z",
+    "balanceBefore": 75,
+    "balanceAfter": 200
+  },
+  {
+    "id": "457320f0-2ebc-423c-a9c3-e8919c439888",
+    "userId": "78371e2d-c174-47fe-94ff-6d3f68fcf55c",
+    "companyId": "ca18b690-920d-4ff5-96ba-a5b689a8a934",
+    "retailerId": "60c70786-3bc8-4e77-bf05-8bd6ab3b9cd1",
+    "amount": 3000,
+    "status": "approved",
+    "timestamp": "2025-12-03T18:54:49.455Z",
+    "balanceBefore": 0,
+    "balanceAfter": 3000
+  },
+  {
+    "id": "c90a7fbc-64c3-430f-a63c-042ba22f67d8",
+    "userId": "3acf805a-9664-41e1-b948-3c1bae81e1f3",
+    "companyId": "166cdf44-9cff-416a-aa62-2afaa4f57729",
+    "retailerId": "60c70786-3bc8-4e77-bf05-8bd6ab3b9cd1",
+    "amount": 1400,
+    "status": "denied",
+    "denialReason": "limit_exceeded",
+    "timestamp": "2025-12-03T18:58:55.622Z",
+    "balanceBefore": 200,
+    "balanceAfter": 200
+  },
+  {
+    "id": "c81cb011-5aec-4089-9222-44aae1070f8d",
+    "userId": "3acf805a-9664-41e1-b948-3c1bae81e1f3",
+    "companyId": "166cdf44-9cff-416a-aa62-2afaa4f57729",
+    "retailerId": "60c70786-3bc8-4e77-bf05-8bd6ab3b9cd1",
+    "amount": 1300,
+    "status": "approved",
+    "timestamp": "2025-12-03T18:59:04.830Z",
+    "balanceBefore": 200,
+    "balanceAfter": 1500
+  }
+]

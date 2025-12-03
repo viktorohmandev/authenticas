@@ -1,0 +1,13 @@
+[
+  {
+    "id": "a8e935b5-a956-4c4f-a52e-ad9eeda33f3a",
+    "companyId": "ca18b690-920d-4ff5-96ba-a5b689a8a934",
+    "retailerId": "60c70786-3bc8-4e77-bf05-8bd6ab3b9cd1",
+    "status": "approved",
+    "reason": "Vet inte...",
+    "requestedBy": "78371e2d-c174-47fe-94ff-6d3f68fcf55c",
+    "createdAt": "2025-12-03T18:55:40.517Z",
+    "updatedAt": "2025-12-03T18:56:24.806Z",
+    "processedBy": "59996759-fb6f-4da5-b4d2-8d19f898fe29"
+  }
+]
