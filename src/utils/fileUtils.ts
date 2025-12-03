@@ -1,7 +1,20 @@
 import fs from 'fs';
 import path from 'path';
 
-const DATA_DIR = path.join(__dirname, '..', 'data');
+// In production, data is in dist/data; in development, it's in src/data
+// We use process.cwd() to get the project root and then determine the correct path
+const getDataDir = (): string => {
+  // Check if we're running from dist/ (production) or src/ (development)
+  if (__dirname.includes('dist')) {
+    // Production: dist/utils -> dist/data
+    return path.join(__dirname, '..', 'data');
+  } else {
+    // Development: src/utils -> src/data
+    return path.join(__dirname, '..', 'data');
+  }
+};
+
+const DATA_DIR = getDataDir();
 
 // Ensure data directory exists
 export function ensureDataDir(): void {

@@ -180,7 +180,7 @@ export async function updateRetailer(req: Request, res: Response): Promise<void>
     
     // Audit
     const performedBy = req.user?.userId || 'system';
-    await audit.retailerUpdated(performedBy, id, existingRetailer, updatedRetailer);
+    await audit.retailerUpdated(performedBy, id, { ...existingRetailer }, { ...updatedRetailer });
     
     const response: ApiResponse<Retailer> = {
       success: true,
