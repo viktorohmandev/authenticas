@@ -18,7 +18,7 @@ import styles from './DisconnectRequest.module.css';
 
 export default function DisconnectRequest() {
   const { user } = useAuth();
-  const [company, setCompany] = useState<any>(null);
+  const [, setCompany] = useState<any>(null);
   // Initialize as empty array to prevent undefined errors
   const [linkedRetailers, setLinkedRetailers] = useState<Retailer[]>([]);
   const [requests, setRequests] = useState<DisconnectRequestType[]>([]);

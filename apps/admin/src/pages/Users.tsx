@@ -3,7 +3,6 @@ import { usersApi, companiesApi } from '@shared/utils/api';
 import { formatDate, formatCurrency } from '@shared/utils';
 import {
   Card,
-  CardHeader,
   Button,
   Input,
   Select,

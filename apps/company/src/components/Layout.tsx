@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '@shared/hooks';
 import { Button } from '@shared/components';
-import { canManageUsers, isCompanyUser } from '@shared/types';
+import { canManageUsers } from '@shared/types';
 import styles from './Layout.module.css';
 
 export default function Layout({ children }: { children: React.ReactNode }) {

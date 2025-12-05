@@ -1,0 +1,13 @@
+{
+  "name": "authenticas-frontend",
+  "version": "1.0.0",
+  "description": "Combined frontend for Authenticas B2B verification system",
+  "scripts": {
+    "build": "node build.js",
+    "preview": "npx serve dist -l 3000"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
+

@@ -7,7 +7,7 @@ import { Card, CardHeader, CardContent, Badge, Stat, Button, Input, useToast } f
 import styles from './MyProfile.module.css';
 
 export default function MyProfile() {
-  const { user, login } = useAuth();
+  const { user } = useAuth();
   const { showToast } = useToast();
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);

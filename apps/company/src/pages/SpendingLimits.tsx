@@ -4,7 +4,6 @@ import { usersApi } from '@shared/utils/api';
 import { formatCurrency } from '@shared/utils';
 import {
   Card,
-  CardHeader,
   CardContent,
   Button,
   Input,

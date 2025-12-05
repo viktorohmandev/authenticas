@@ -28,8 +28,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             id={inputId}
             className={cn(
               styles.input,
-              leftIcon && styles.hasLeftIcon,
-              rightIcon && styles.hasRightIcon
+              !!leftIcon && styles.hasLeftIcon,
+              !!rightIcon && styles.hasRightIcon
             )}
             {...props}
           />

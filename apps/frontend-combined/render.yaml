@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: authenticas-frontend
+    runtime: static
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    pullRequestPreviewsEnabled: true
+    routes:
+      - type: rewrite
+        source: /admin-login/*
+        destination: /admin-login/index.html
+      - type: rewrite
+        source: /retailer-login/*
+        destination: /retailer-login/index.html
+      - type: rewrite
+        source: /company-login/*
+        destination: /company-login/index.html
+

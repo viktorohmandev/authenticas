@@ -4,6 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/retailer-login/',
   resolve: {
     alias: {
       '@shared': path.resolve(__dirname, '../shared/src'),
@@ -11,5 +12,8 @@ export default defineConfig({
   },
   server: {
     port: 5174,
+  },
+  build: {
+    outDir: 'dist',
   },
 });

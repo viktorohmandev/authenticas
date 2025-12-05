@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authenticas - B2B Purchase Verification</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+      color: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 800px;
+      text-align: center;
+    }
+    
+    .logo {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    
+    .tagline {
+      font-size: 1.25rem;
+      color: #94a3b8;
+      margin-bottom: 3rem;
+    }
+    
+    .portals {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+    }
+    
+    .portal-card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .portal-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .portal-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(148, 163, 184, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    .portal-card:hover::before {
+      opacity: 1;
+    }
+    
+    .portal-card.admin {
+      --accent: #ef4444;
+      --accent-light: #f87171;
+    }
+    
+    .portal-card.retailer {
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+    }
+    
+    .portal-card.company {
+      --accent: #10b981;
+      --accent-light: #34d399;
+    }
+    
+    .portal-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .portal-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .portal-desc {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+    
+    .footer {
+      margin-top: 4rem;
+      color: #64748b;
+      font-size: 0.875rem;
+    }
+    
+    .footer a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+    
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="logo">Authenticas</h1>
+    <p class="tagline">B2B Corporate Purchase Verification System</p>
+    
+    <div class="portals">
+      <a href="/admin-login/" class="portal-card admin">
+        <div class="portal-icon">🛡️</div>
+        <h2 class="portal-title">System Admin</h2>
+        <p class="portal-desc">Full system access for managing retailers, companies, and audit trails</p>
+      </a>
+      
+      <a href="/retailer-login/" class="portal-card retailer">
+        <div class="portal-icon">🏪</div>
+        <h2 class="portal-title">Retailer Portal</h2>
+        <p class="portal-desc">Manage your connected companies and verify corporate purchases</p>
+      </a>
+      
+      <a href="/company-login/" class="portal-card company">
+        <div class="portal-icon">🏢</div>
+        <h2 class="portal-title">Company Portal</h2>
+        <p class="portal-desc">Manage employees, spending limits, and purchase approvals</p>
+      </a>
+    </div>
+    
+    <footer class="footer">
+      <p>API Status: <a href="https://authenticas-api.onrender.com/health" target="_blank">Check Health</a></p>
+    </footer>
+  </div>
+</body>
+</html>
+

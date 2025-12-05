@@ -1,0 +1,5 @@
+# Netlify SPA redirects
+/admin-login/*    /admin-login/index.html    200
+/retailer-login/* /retailer-login/index.html 200
+/company-login/*  /company-login/index.html  200
+
