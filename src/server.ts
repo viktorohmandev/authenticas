@@ -91,34 +91,10 @@ async function startServer(): Promise<void> {
     
     // Start listening
     app.listen(PORT, () => {
-      console.log(`
-╔═══════════════════════════════════════════════════════════╗
-║                                                           ║
-║     🔐 AUTHENTICAS API SERVER                            ║
-║                                                           ║
-║     Server running on http://localhost:${PORT}              ║
-║     Environment: ${process.env.NODE_ENV || 'development'}                          ║
-║                                                           ║
-║     User Roles:                                           ║
-║     • system_admin - Full system access                   ║
-║     • retailer_admin - Manage retailer & companies        ║
-║     • company_admin - Manage company & users              ║
-║     • company_user - View own data only                   ║
-║                                                           ║
-║     API Endpoints:                                        ║
-║     • POST /verifyPurchase - Verify purchase              ║
-║     • POST /api/auth/login - User login                   ║
-║     • GET  /api/auth/me - Current user info               ║
-║     • GET  /api/retailers - List retailers                ║
-║     • GET  /api/companies - List companies                ║
-║     • GET  /api/users - List users                        ║
-║     • GET  /api/transactions - List transactions          ║
-║     • GET  /api/disconnect-requests - Disconnect requests ║
-║     • GET  /api/audit - Audit trail (system_admin)        ║
-║     • GET  /health - Health check                         ║
-║                                                           ║
-╚═══════════════════════════════════════════════════════════╝
-      `);
+      console.log(`🔐 AUTHENTICAS API SERVER started`);
+      console.log(`   Port: ${PORT}`);
+      console.log(`   Environment: ${process.env.NODE_ENV || 'development'}`);
+      console.log(`   Health check: /health`);
     });
   } catch (error) {
     console.error('❌ Failed to start server:', error);
