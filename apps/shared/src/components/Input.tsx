@@ -1,17 +1,19 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { cn } from '../utils';
 import styles from './Input.module.css';
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+type InputProps = {
   label?: string;
   error?: string;
   hint?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
-}
+  className?: string;
+  id?: string;
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, error, hint, leftIcon, rightIcon, className, id, ...props }, ref) => {
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ label, error, hint, leftIcon, rightIcon, className, id, ...rest }, ref) => {
     const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
     
     return (
@@ -31,7 +33,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               !!leftIcon && styles.hasLeftIcon,
               !!rightIcon && styles.hasRightIcon
             )}
-            {...props}
+            {...rest}
           />
           {rightIcon && <span className={styles.iconRight}>{rightIcon}</span>}
         </div>

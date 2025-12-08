@@ -19,7 +19,7 @@ export function useAuth() {
       setToken(token);
       fetchUser();
     } else {
-      setState((prev) => ({ ...prev, isLoading: false }));
+      setState((prev: AuthState) => ({ ...prev, isLoading: false }));
     }
   }, []);
   
@@ -45,7 +45,7 @@ export function useAuth() {
   };
   
   const login = useCallback(async (email: string, password: string) => {
-    setState((prev) => ({ ...prev, isLoading: true }));
+    setState((prev: AuthState) => ({ ...prev, isLoading: true }));
     
     const response = await authApi.login(email, password);
     
@@ -61,7 +61,7 @@ export function useAuth() {
       return { success: true };
     }
     
-    setState((prev) => ({ ...prev, isLoading: false }));
+    setState((prev: AuthState) => ({ ...prev, isLoading: false }));
     return { success: false, error: response.error || 'Login failed' };
   }, []);
   
@@ -79,7 +79,7 @@ export function useAuth() {
     const response = await authApi.refresh();
     if (response.success && response.data) {
       setToken(response.data.token);
-      setState((prev) => ({
+      setState((prev: AuthState) => ({
         ...prev,
         token: response.data!.token,
       }));
