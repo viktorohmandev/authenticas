@@ -73,6 +73,10 @@
   color: var(--color-text-muted);
 }
 
+.noSpending {
+  color: var(--color-text-muted);
+}
+
 .form {
   display: flex;
   flex-direction: column;

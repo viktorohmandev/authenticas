@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { usersApi, companiesApi } from '@shared/utils/api';
+import { usersApi, companiesApi, retailersApi } from '@shared/utils/api';
 import { formatDate, formatCurrency } from '@shared/utils';
 import {
   Card,
@@ -20,9 +20,12 @@ import {
 } from '@shared/components';
 import styles from './Users.module.css';
 
+type UserRole = 'system_admin' | 'retailer_admin' | 'company_admin' | 'company_user';
+
 export default function Users() {
   const [users, setUsers] = useState<any[]>([]);
   const [companies, setCompanies] = useState<any[]>([]);
+  const [retailers, setRetailers] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,7 +35,8 @@ export default function Users() {
     firstName: '',
     lastName: '',
     companyId: '',
-    role: 'regular' as 'regular' | 'admin',
+    retailerId: '',
+    role: 'company_user' as UserRole,
     spendingLimit: 1000,
   });
   const { showToast } = useToast();
@@ -42,25 +46,58 @@ export default function Users() {
   }, []);
   
   const loadData = async () => {
-    const [usersRes, companiesRes] = await Promise.all([
+    const [usersRes, companiesRes, retailersRes] = await Promise.all([
       usersApi.list(),
       companiesApi.list(),
+      retailersApi.list(),
     ]);
     
     if (usersRes.success) setUsers(usersRes.data || []);
     if (companiesRes.success) setCompanies(companiesRes.data || []);
+    if (retailersRes.success) setRetailers(retailersRes.data || []);
     setIsLoading(false);
   };
   
   const handleCreateUser = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newUser.email || !newUser.password || !newUser.firstName || !newUser.lastName || !newUser.companyId) {
+    
+    // Validate required fields based on role
+    if (!newUser.email || !newUser.password || !newUser.firstName || !newUser.lastName) {
       showToast('Please fill in all required fields', 'error');
       return;
     }
     
+    // Validate role-specific fields
+    if ((newUser.role === 'company_admin' || newUser.role === 'company_user') && !newUser.companyId) {
+      showToast('Please select a company for this user', 'error');
+      return;
+    }
+    
+    if (newUser.role === 'retailer_admin' && !newUser.retailerId) {
+      showToast('Please select a retailer for this user', 'error');
+      return;
+    }
+    
     setIsSubmitting(true);
-    const response = await usersApi.create(newUser);
+    
+    // Build the user data based on role
+    const userData: any = {
+      email: newUser.email,
+      password: newUser.password,
+      firstName: newUser.firstName,
+      lastName: newUser.lastName,
+      role: newUser.role,
+    };
+    
+    // Add role-specific fields
+    if (newUser.role === 'company_admin' || newUser.role === 'company_user') {
+      userData.companyId = newUser.companyId;
+      userData.spendingLimit = newUser.spendingLimit;
+    } else if (newUser.role === 'retailer_admin') {
+      userData.retailerId = newUser.retailerId;
+    }
+    
+    const response = await usersApi.create(userData);
     
     if (response.success) {
       showToast('User created successfully', 'success');
@@ -72,7 +109,8 @@ export default function Users() {
         firstName: '',
         lastName: '',
         companyId: '',
-        role: 'regular',
+        retailerId: '',
+        role: 'company_user',
         spendingLimit: 1000,
       });
     } else {
@@ -96,6 +134,26 @@ export default function Users() {
   const getCompanyName = (companyId: string) => {
     const company = companies.find((c) => c.id === companyId);
     return company?.name || 'Unknown';
+  };
+  
+  const getRetailerName = (retailerId: string) => {
+    const retailer = retailers.find((r) => r.id === retailerId);
+    return retailer?.name || 'Unknown';
+  };
+  
+  const getOrganization = (user: any) => {
+    if (user.role === 'system_admin') return '—';
+    if (user.role === 'retailer_admin') return getRetailerName(user.retailerId);
+    return getCompanyName(user.companyId);
+  };
+  
+  const getRoleBadgeVariant = (role: string) => {
+    switch (role) {
+      case 'system_admin': return 'error';
+      case 'retailer_admin': return 'info';
+      case 'company_admin': return 'warning';
+      default: return 'default';
+    }
   };
   
   if (isLoading) {
@@ -123,7 +181,7 @@ export default function Users() {
           <TableHead>
             <TableRow>
               <TableHeader>User</TableHeader>
-              <TableHeader>Company</TableHeader>
+              <TableHeader>Organization</TableHeader>
               <TableHeader>Role</TableHeader>
               <TableHeader>Spending</TableHeader>
               <TableHeader>Status</TableHeader>
@@ -150,21 +208,25 @@ export default function Users() {
                       </div>
                     </div>
                   </TableCell>
-                  <TableCell>{getCompanyName(user.companyId)}</TableCell>
+                  <TableCell>{getOrganization(user)}</TableCell>
                   <TableCell>
-                    <Badge variant={user.role === 'admin' ? 'info' : 'default'}>
+                    <Badge variant={getRoleBadgeVariant(user.role)}>
                       {user.role}
                     </Badge>
                   </TableCell>
                   <TableCell>
-                    <div className={styles.spending}>
-                      <span className={styles.spentAmount}>
-                        {formatCurrency(user.spentThisMonth || 0)}
-                      </span>
-                      <span className={styles.spendingLimit}>
-                        / {formatCurrency(user.spendingLimit || 0)}
-                      </span>
-                    </div>
+                    {(user.role === 'company_admin' || user.role === 'company_user') ? (
+                      <div className={styles.spending}>
+                        <span className={styles.spentAmount}>
+                          {formatCurrency(user.spentThisMonth || 0)}
+                        </span>
+                        <span className={styles.spendingLimit}>
+                          / {formatCurrency(user.spendingLimit || 0)}
+                        </span>
+                      </div>
+                    ) : (
+                      <span className={styles.noSpending}>—</span>
+                    )}
                   </TableCell>
                   <TableCell>
                     <Badge variant={user.isActive ? 'success' : 'error'}>
@@ -238,30 +300,52 @@ export default function Users() {
             required
           />
           <Select
-            label="Company"
-            options={companies.map((c) => ({ value: c.id, label: c.name }))}
-            value={newUser.companyId}
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewUser({ ...newUser, companyId: e.target.value })}
-            placeholder="Select a company"
+            label="User Role"
+            options={[
+              { value: 'company_user', label: 'Company User' },
+              { value: 'company_admin', label: 'Company Admin' },
+              { value: 'retailer_admin', label: 'Retailer Admin' },
+              { value: 'system_admin', label: 'System Admin' },
+            ]}
+            value={newUser.role}
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewUser({ 
+              ...newUser, 
+              role: e.target.value as UserRole,
+              companyId: '',
+              retailerId: '',
+            })}
           />
-          <div className={styles.formRow}>
+          
+          {/* Show Company selector for company roles */}
+          {(newUser.role === 'company_admin' || newUser.role === 'company_user') && (
+            <>
+              <Select
+                label="Company"
+                options={companies.map((c) => ({ value: c.id, label: c.name }))}
+                value={newUser.companyId}
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewUser({ ...newUser, companyId: e.target.value })}
+                placeholder="Select a company"
+              />
+              <Input
+                label="Spending Limit ($)"
+                type="number"
+                min={0}
+                value={newUser.spendingLimit}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewUser({ ...newUser, spendingLimit: Number(e.target.value) })}
+              />
+            </>
+          )}
+          
+          {/* Show Retailer selector for retailer_admin role */}
+          {newUser.role === 'retailer_admin' && (
             <Select
-              label="Role"
-              options={[
-                { value: 'regular', label: 'Regular User' },
-                { value: 'admin', label: 'Administrator' },
-              ]}
-              value={newUser.role}
-              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewUser({ ...newUser, role: e.target.value as 'regular' | 'admin' })}
+              label="Retailer"
+              options={retailers.map((r) => ({ value: r.id, label: r.name }))}
+              value={newUser.retailerId}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewUser({ ...newUser, retailerId: e.target.value })}
+              placeholder="Select a retailer"
             />
-            <Input
-              label="Spending Limit ($)"
-              type="number"
-              min={0}
-              value={newUser.spendingLimit}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewUser({ ...newUser, spendingLimit: Number(e.target.value) })}
-            />
-          </div>
+          )}
         </form>
       </Modal>
     </div>
