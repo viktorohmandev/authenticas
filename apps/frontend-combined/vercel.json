@@ -1,10 +1,13 @@
 {
   "rewrites": [
     { "source": "/admin-login", "destination": "/admin-login/index.html" },
+    { "source": "/admin-login/", "destination": "/admin-login/index.html" },
     { "source": "/admin-login/(.*)", "destination": "/admin-login/index.html" },
     { "source": "/retailer-login", "destination": "/retailer-login/index.html" },
+    { "source": "/retailer-login/", "destination": "/retailer-login/index.html" },
     { "source": "/retailer-login/(.*)", "destination": "/retailer-login/index.html" },
     { "source": "/company-login", "destination": "/company-login/index.html" },
+    { "source": "/company-login/", "destination": "/company-login/index.html" },
     { "source": "/company-login/(.*)", "destination": "/company-login/index.html" }
   ]
 }

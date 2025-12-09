@@ -64,11 +64,7 @@ fs.copyFileSync(
   path.join(DIST, '_redirects')
 );
 
-// Copy vercel.json for Vercel
-fs.copyFileSync(
-  path.join(__dirname, 'vercel.json'),
-  path.join(DIST, 'vercel.json')
-);
+// Note: vercel.json stays at project root, not in dist
 
 console.log('✅ Build complete! Output in apps/frontend-combined/dist/');
 console.log('');
