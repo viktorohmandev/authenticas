@@ -74,8 +74,12 @@ export default function Login() {
         </form>
         
         <div className={styles.footer}>
-          <p>Test credentials: admin@acme.com / admin123</p>
+          <p>Test credentials: admin@authenticas.com / admin123</p>
         </div>
+        
+        <a href="/" className={styles.backLink}>
+          ← Back to Home
+        </a>
       </Card>
     </div>
   );

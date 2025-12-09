@@ -51,7 +51,7 @@ export default function Login() {
             label="Email"
             placeholder="retailer@store.com"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             required
           />
           
@@ -74,8 +74,12 @@ export default function Login() {
         </form>
         
         <div className={styles.footer}>
-          <p>Test: admin@acme.com / admin123</p>
+          <p>Test: admin@techmart.com / retailer123</p>
         </div>
+        
+        <a href="/" className={styles.backLink}>
+          ← Back to Home
+        </a>
       </Card>
     </div>
   );

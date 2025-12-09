@@ -110,3 +110,17 @@
   margin: 0;
 }
 
+.backLink {
+  display: block;
+  text-align: center;
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--color-text-primary);
+}
+
