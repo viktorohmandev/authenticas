@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '@shared/hooks';
 import { retailersApi } from '@shared/utils/api';
 import {
@@ -102,7 +102,7 @@ export default function Webhooks() {
                 label="Webhook URL"
                 placeholder="https://yoursite.com/webhook"
                 value={webhookUrl}
-                onChange={(e) => setWebhookUrl(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setWebhookUrl(e.target.value)}
                 hint="We'll send POST requests to this URL for purchase events"
               />
             </div>

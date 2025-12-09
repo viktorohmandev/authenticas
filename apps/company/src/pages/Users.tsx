@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '@shared/hooks';
 import { usersApi } from '@shared/utils/api';
 import { formatCurrency } from '@shared/utils';
@@ -239,14 +239,14 @@ export default function Users() {
               label="First Name"
               placeholder="John"
               value={newUser.firstName}
-              onChange={(e) => setNewUser({ ...newUser, firstName: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewUser({ ...newUser, firstName: e.target.value })}
               required
             />
             <Input
               label="Last Name"
               placeholder="Doe"
               value={newUser.lastName}
-              onChange={(e) => setNewUser({ ...newUser, lastName: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewUser({ ...newUser, lastName: e.target.value })}
               required
             />
           </div>
@@ -263,7 +263,7 @@ export default function Users() {
             type="password"
             placeholder="Enter temporary password"
             value={newUser.password}
-            onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewUser({ ...newUser, password: e.target.value })}
             required
             hint="User should change this on first login"
           />
@@ -275,7 +275,7 @@ export default function Users() {
                 { value: 'admin', label: 'Administrator' },
               ]}
               value={newUser.role}
-              onChange={(e) => setNewUser({ ...newUser, role: e.target.value as 'regular' | 'admin' })}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewUser({ ...newUser, role: e.target.value as 'regular' | 'admin' })}
             />
             <Input
               label="Spending Limit ($)"

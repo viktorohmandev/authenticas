@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '@shared/hooks';
 import { transactionsApi, linksApi, companiesApi } from '@shared/utils/api';
 import { formatCurrency } from '@shared/utils';
@@ -217,7 +217,7 @@ export default function TestPurchase() {
                     <Select
                       label="Select User"
                       value={selectedUserId}
-                      onChange={(e) => setSelectedUserId(e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedUserId(e.target.value)}
                     >
                       <option value="">Choose a user...</option>
                       {safeUsers.map((u) => (
@@ -266,7 +266,7 @@ export default function TestPurchase() {
                 step="0.01"
                 placeholder="50.00"
                 value={amount}
-                onChange={(e) => setAmount(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAmount(e.target.value)}
                 disabled={!selectedUserId}
               />
             </div>

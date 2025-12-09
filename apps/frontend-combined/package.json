@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Combined frontend for Authenticas B2B verification system",
   "scripts": {
+    "prebuild": "cd ../shared && npm install",
     "build": "node build.js",
     "preview": "npx serve dist -l 3000"
   },
@@ -10,5 +11,3 @@
     "serve": "^14.2.0"
   }
 }
-
-

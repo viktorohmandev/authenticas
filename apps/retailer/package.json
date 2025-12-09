@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 5174",
+    "prebuild": "cd ../shared && npm install",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

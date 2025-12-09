@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '@shared/hooks';
 import { usersApi } from '@shared/utils/api';
 import { formatCurrency } from '@shared/utils';
@@ -115,7 +115,7 @@ export default function MyProfile() {
                       <Input
                         label="First Name"
                         value={editForm.firstName}
-                        onChange={(e) => setEditForm({ ...editForm, firstName: e.target.value })}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEditForm({ ...editForm, firstName: e.target.value })}
                         placeholder="Enter first name"
                       />
                     </div>
@@ -123,7 +123,7 @@ export default function MyProfile() {
                       <Input
                         label="Last Name"
                         value={editForm.lastName}
-                        onChange={(e) => setEditForm({ ...editForm, lastName: e.target.value })}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEditForm({ ...editForm, lastName: e.target.value })}
                         placeholder="Enter last name"
                       />
                     </div>

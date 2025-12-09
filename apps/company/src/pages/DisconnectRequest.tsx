@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '@shared/hooks';
 import { companiesApi, linksApi } from '@shared/utils/api';
 import type { DisconnectRequest as DisconnectRequestType, Retailer } from '@shared/types';
@@ -297,7 +297,7 @@ export default function DisconnectRequest() {
                 <Select
                   label="Select Retailer"
                   value={selectedRetailerId}
-                  onChange={(e) => setSelectedRetailerId(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedRetailerId(e.target.value)}
                 >
                   <option value="">Choose a retailer...</option>
                   {availableRetailers.map((retailer) => (
@@ -310,7 +310,7 @@ export default function DisconnectRequest() {
                   label="Reason (Optional)"
                   placeholder="Why do you want to disconnect?"
                   value={reason}
-                  onChange={(e) => setReason(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setReason(e.target.value)}
                   hint="Providing a reason helps the retailer understand your request"
                 />
                 <div className={styles.formActions}>
