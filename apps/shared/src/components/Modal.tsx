@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { cn } from '../utils';
 import styles from './Modal.module.css';
 
-type ModalProps = {
+export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   title?: string;
   children?: React.ReactNode;
   footer?: React.ReactNode;
   size?: 'sm' | 'md' | 'lg';
-};
+}
 
 export const Modal: React.FC<ModalProps> = ({
   isOpen,
@@ -41,7 +41,7 @@ export const Modal: React.FC<ModalProps> = ({
     <div className={styles.overlay} onClick={onClose}>
       <div
         className={cn(styles.modal, styles[size])}
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e: React.MouseEvent) => e.stopPropagation()}
       >
         <div className={styles.header}>
           {title && <h2 className={styles.title}>{title}</h2>}

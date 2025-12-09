@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { companiesApi } from '@shared/utils/api';
 import { formatDate } from '@shared/utils';
 import {
@@ -215,14 +215,14 @@ export default function Companies() {
             label="Company Name"
             placeholder="Enter company name"
             value={newCompany.name}
-            onChange={(e) => setNewCompany({ ...newCompany, name: e.target.value })}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewCompany({ ...newCompany, name: e.target.value })}
             required
           />
           <Input
             label="Webhook URL (optional)"
             placeholder="https://example.com/webhook"
             value={newCompany.webhookUrl}
-            onChange={(e) => setNewCompany({ ...newCompany, webhookUrl: e.target.value })}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewCompany({ ...newCompany, webhookUrl: e.target.value })}
           />
         </form>
       </Modal>

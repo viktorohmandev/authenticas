@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { usersApi, companiesApi } from '@shared/utils/api';
 import { formatDate, formatCurrency } from '@shared/utils';
 import {
@@ -210,14 +210,14 @@ export default function Users() {
               label="First Name"
               placeholder="John"
               value={newUser.firstName}
-              onChange={(e) => setNewUser({ ...newUser, firstName: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewUser({ ...newUser, firstName: e.target.value })}
               required
             />
             <Input
               label="Last Name"
               placeholder="Doe"
               value={newUser.lastName}
-              onChange={(e) => setNewUser({ ...newUser, lastName: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewUser({ ...newUser, lastName: e.target.value })}
               required
             />
           </div>
@@ -226,7 +226,7 @@ export default function Users() {
             type="email"
             placeholder="john.doe@company.com"
             value={newUser.email}
-            onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewUser({ ...newUser, email: e.target.value })}
             required
           />
           <Input
@@ -234,14 +234,14 @@ export default function Users() {
             type="password"
             placeholder="Enter password"
             value={newUser.password}
-            onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewUser({ ...newUser, password: e.target.value })}
             required
           />
           <Select
             label="Company"
             options={companies.map((c) => ({ value: c.id, label: c.name }))}
             value={newUser.companyId}
-            onChange={(e) => setNewUser({ ...newUser, companyId: e.target.value })}
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewUser({ ...newUser, companyId: e.target.value })}
             placeholder="Select a company"
           />
           <div className={styles.formRow}>
@@ -252,14 +252,14 @@ export default function Users() {
                 { value: 'admin', label: 'Administrator' },
               ]}
               value={newUser.role}
-              onChange={(e) => setNewUser({ ...newUser, role: e.target.value as 'regular' | 'admin' })}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewUser({ ...newUser, role: e.target.value as 'regular' | 'admin' })}
             />
             <Input
               label="Spending Limit ($)"
               type="number"
               min={0}
               value={newUser.spendingLimit}
-              onChange={(e) => setNewUser({ ...newUser, spendingLimit: Number(e.target.value) })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewUser({ ...newUser, spendingLimit: Number(e.target.value) })}
             />
           </div>
         </form>

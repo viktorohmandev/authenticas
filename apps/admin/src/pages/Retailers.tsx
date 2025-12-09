@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { retailersApi } from '@shared/utils/api';
 import {
   Card,
@@ -194,14 +194,14 @@ export default function Retailers() {
             label="Retailer Name"
             placeholder="Enter retailer name"
             value={newRetailer.name}
-            onChange={(e) => setNewRetailer({ ...newRetailer, name: e.target.value })}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewRetailer({ ...newRetailer, name: e.target.value })}
             required
           />
           <Input
             label="Webhook URL (Optional)"
             placeholder="https://example.com/webhooks"
             value={newRetailer.webhookUrl}
-            onChange={(e) => setNewRetailer({ ...newRetailer, webhookUrl: e.target.value })}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewRetailer({ ...newRetailer, webhookUrl: e.target.value })}
           />
         </form>
       </Modal>

@@ -42,7 +42,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     <ToastContext.Provider value={{ showToast }}>
       {children}
       <div className={styles.container}>
-        {toasts.map((toast) => (
+        {toasts.map((toast: Toast) => (
           <div
             key={toast.id}
             className={cn(styles.toast, styles[toast.type])}
@@ -61,4 +61,3 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     </ToastContext.Provider>
   );
 };
-

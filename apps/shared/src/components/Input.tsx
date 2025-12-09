@@ -2,15 +2,13 @@ import React from 'react';
 import { cn } from '../utils';
 import styles from './Input.module.css';
 
-type InputProps = {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
   hint?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
-  className?: string;
-  id?: string;
-} & React.InputHTMLAttributes<HTMLInputElement>;
+}
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ label, error, hint, leftIcon, rightIcon, className, id, ...rest }, ref) => {
