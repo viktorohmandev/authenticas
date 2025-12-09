@@ -2,19 +2,29 @@ import type { ApiResponse, DisconnectRequest, Retailer, CompanyRetailerLink, Com
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
+// Use different storage keys for each app to allow multiple logins
+function getStorageKey(): string {
+  if (typeof window === 'undefined') return 'auth_token';
+  const path = window.location.pathname;
+  if (path.startsWith('/admin-login')) return 'admin_auth_token';
+  if (path.startsWith('/company-login')) return 'company_auth_token';
+  if (path.startsWith('/retailer-login')) return 'retailer_auth_token';
+  return 'auth_token';
+}
+
 // Get stored token
 function getToken(): string | null {
-  return localStorage.getItem('auth_token');
+  return localStorage.getItem(getStorageKey());
 }
 
 // Set stored token
 export function setToken(token: string): void {
-  localStorage.setItem('auth_token', token);
+  localStorage.setItem(getStorageKey(), token);
 }
 
 // Clear stored token
 export function clearToken(): void {
-  localStorage.removeItem('auth_token');
+  localStorage.removeItem(getStorageKey());
 }
 
 // API fetch wrapper

@@ -43,7 +43,10 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
           Your current role: <strong>{user?.role || 'unknown'}</strong>
         </p>
         <button 
-          onClick={() => window.location.href = '/login'}
+          onClick={() => {
+            localStorage.removeItem('retailer_auth_token');
+            window.location.href = '/retailer-login/login';
+          }}
           style={{
             marginTop: '2rem',
             padding: '0.75rem 1.5rem',
@@ -56,6 +59,18 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
         >
           Switch Account
         </button>
+        <a 
+          href="/"
+          style={{
+            display: 'block',
+            marginTop: '1rem',
+            color: 'var(--color-text-muted)',
+            textDecoration: 'none',
+            fontSize: '0.875rem'
+          }}
+        >
+          ← Back to Home
+        </a>
       </div>
     );
   }
