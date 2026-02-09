@@ -64,6 +64,20 @@ fs.copyFileSync(
   path.join(DIST, '_redirects')
 );
 
+// Copy favicon files
+fs.copyFileSync(
+  path.join(__dirname, 'public', 'favicon.ico'),
+  path.join(DIST, 'favicon.ico')
+);
+fs.copyFileSync(
+  path.join(__dirname, 'public', 'favicon-32x32.png'),
+  path.join(DIST, 'favicon-32x32.png')
+);
+fs.copyFileSync(
+  path.join(__dirname, 'public', 'apple-touch-icon.png'),
+  path.join(DIST, 'apple-touch-icon.png')
+);
+
 // Note: vercel.json stays at project root, not in dist
 
 console.log('✅ Build complete! Output in apps/frontend-combined/dist/');
