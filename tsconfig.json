@@ -18,11 +18,5 @@
     "moduleResolution": "node"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"],
-  "references": [
-    { "path": "./apps/shared" },
-    { "path": "./apps/admin" },
-    { "path": "./apps/company" },
-    { "path": "./apps/retailer" }
-  ]
+  "exclude": ["node_modules", "dist", "apps"]
 }
