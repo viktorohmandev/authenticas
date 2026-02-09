@@ -3,21 +3,132 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile navigation toggle
-  const navToggle = document.getElementById('nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  const navActions = document.querySelector('.nav-actions');
-  
-  if (navToggle) {
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('active');
-      // In a full implementation, you would show/hide the mobile menu
+  // Stage tabs interaction
+  const stageTabs = document.querySelectorAll('.stage-tab');
+  const stageImages = document.querySelectorAll('.stage-image');
+
+  stageTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const stage = tab.dataset.stage;
+      
+      // Update tabs
+      stageTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      // Update images
+      stageImages.forEach(img => {
+        img.classList.remove('active');
+        if (img.dataset.stage === stage) {
+          img.classList.add('active');
+        }
+      });
+    });
+  });
+
+  // Testimonials carousel
+  const testimonialCards = document.querySelectorAll('.testimonial-card');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  let currentTestimonial = 0;
+
+  function showTestimonial(index) {
+    testimonialCards.forEach((card, i) => {
+      card.classList.remove('active');
+      if (i === index) {
+        card.classList.add('active');
+      }
     });
   }
 
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial - 1 + testimonialCards.length) % testimonialCards.length;
+      showTestimonial(currentTestimonial);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+      showTestimonial(currentTestimonial);
+    });
+
+    // Auto-rotate testimonials
+    setInterval(() => {
+      currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+      showTestimonial(currentTestimonial);
+    }, 5000);
+  }
+
+  // Code tabs
+  const codeTabBtns = document.querySelectorAll('.code-tab-btn');
+  const codeContent = document.getElementById('code-content');
+
+  const codeExamples = {
+    curl: `<span class="code-keyword">curl</span> -X POST https://api.authenticas.se/verifyPurchase \\
+  -H <span class="code-string">"Authorization: Bearer YOUR_API_KEY"</span> \\
+  -H <span class="code-string">"Content-Type: application/json"</span> \\
+  -d <span class="code-string">'{
+    "email": "employee@company.com",
+    "amount": 2500,
+    "currency": "SEK"
+  }'</span>`,
+    
+    node: `<span class="code-keyword">const</span> response = <span class="code-keyword">await</span> fetch(<span class="code-string">'https://api.authenticas.se/verifyPurchase'</span>, {
+  method: <span class="code-string">'POST'</span>,
+  headers: {
+    <span class="code-string">'Authorization'</span>: <span class="code-string">\`Bearer \${API_KEY}\`</span>,
+    <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
+  },
+  body: JSON.stringify({
+    email: <span class="code-string">'employee@company.com'</span>,
+    amount: 2500,
+    currency: <span class="code-string">'SEK'</span>
+  })
+});`,
+    
+    python: `<span class="code-keyword">import</span> requests
+
+response = requests.post(
+    <span class="code-string">'https://api.authenticas.se/verifyPurchase'</span>,
+    headers={
+        <span class="code-string">'Authorization'</span>: <span class="code-string">f'Bearer {API_KEY}'</span>,
+        <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
+    },
+    json={
+        <span class="code-string">'email'</span>: <span class="code-string">'employee@company.com'</span>,
+        <span class="code-string">'amount'</span>: 2500,
+        <span class="code-string">'currency'</span>: <span class="code-string">'SEK'</span>
+    }
+)`,
+    
+    csharp: `<span class="code-keyword">var</span> client = <span class="code-keyword">new</span> HttpClient();
+client.DefaultRequestHeaders.Add(<span class="code-string">"Authorization"</span>, <span class="code-string">$"Bearer {ApiKey}"</span>);
+
+<span class="code-keyword">var</span> response = <span class="code-keyword">await</span> client.PostAsJsonAsync(
+    <span class="code-string">"https://api.authenticas.se/verifyPurchase"</span>,
+    <span class="code-keyword">new</span> {
+        email = <span class="code-string">"employee@company.com"</span>,
+        amount = 2500,
+        currency = <span class="code-string">"SEK"</span>
+    }
+);`
+  };
+
+  codeTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      
+      codeTabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      if (codeContent && codeExamples[lang]) {
+        codeContent.innerHTML = codeExamples[lang];
+      }
+    });
+  });
+
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
       if (href === '#') return;
       
@@ -36,29 +147,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Add scroll effect to navigation
+  // Nav scroll effect
   const nav = document.querySelector('.nav');
-  let lastScroll = 0;
-
   window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 50) {
-      nav.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1)';
+    if (window.pageYOffset > 50) {
+      nav.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
     } else {
       nav.style.boxShadow = 'none';
     }
-    
-    lastScroll = currentScroll;
   });
 
   // Animate elements on scroll
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -66,14 +165,13 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.style.transform = 'translateY(0)';
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.1 });
 
-  // Observe feature cards and step cards
-  document.querySelectorAll('.feature-card, .step-card, .audience-card, .pricing-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(card);
+  document.querySelectorAll('.feature-block, .hero-card, .stage-tab').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
   });
 
   console.log('Authenticas marketing site loaded');
