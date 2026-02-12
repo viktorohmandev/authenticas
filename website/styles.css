@@ -62,7 +62,7 @@ body {
 /* Typography */
 h1, h2, h3, h4 {
   color: var(--white);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.2;
 }
 
@@ -82,7 +82,7 @@ h1, h2, h3, h4 {
   gap: 8px;
   padding: 10px 20px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
   border-radius: 8px;
   border: none;
@@ -162,7 +162,7 @@ h1, h2, h3, h4 {
   gap: 10px;
   text-decoration: none;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--white);
 }
 
@@ -195,7 +195,7 @@ h1, h2, h3, h4 {
 
 .hero-title {
   font-size: 56px;
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1.1;
   margin-bottom: 24px;
   letter-spacing: -0.02em;
@@ -261,7 +261,7 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 6px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--white);
   text-decoration: none;
 }
@@ -283,7 +283,7 @@ h1, h2, h3, h4 {
 
 .customers-label {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.1em;
   color: var(--gray-400);
   margin-bottom: 16px;
@@ -328,7 +328,7 @@ h1, h2, h3, h4 {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 8px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--gray-600);
   white-space: nowrap;
 }
@@ -336,7 +336,7 @@ h1, h2, h3, h4 {
 /* Section Styles */
 .section-label {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.1em;
   color: var(--gray-500);
   margin-bottom: 16px;
@@ -536,7 +536,7 @@ h1, h2, h3, h4 {
 
 .audit-status {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 400;
   padding: 4px 8px;
   border-radius: 4px;
 }
@@ -554,7 +554,7 @@ h1, h2, h3, h4 {
 .audit-amount {
   margin-left: auto;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--white);
 }
 
@@ -688,7 +688,7 @@ h1, h2, h3, h4 {
   background: transparent;
   border: none;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--gray-600);
   cursor: pointer;
   border-radius: 6px;
@@ -811,7 +811,7 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
   color: var(--white);
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
 }
 
@@ -821,7 +821,7 @@ h1, h2, h3, h4 {
 }
 
 .author-name {
-  font-weight: 600;
+  font-weight: 400;
   color: var(--white);
 }
 
@@ -888,7 +888,7 @@ h1, h2, h3, h4 {
   gap: 10px;
   text-decoration: none;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--white);
 }
 
@@ -905,7 +905,7 @@ h1, h2, h3, h4 {
 
 .footer-column h4 {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--gray-600);
   text-transform: uppercase;
   letter-spacing: 0.05em;
