@@ -151,9 +151,9 @@ client.DefaultRequestHeaders.Add(<span class="code-string">"Authorization"</span
   const nav = document.querySelector('.nav');
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 50) {
-      nav.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+      nav.classList.add('scrolled');
     } else {
-      nav.style.boxShadow = 'none';
+      nav.classList.remove('scrolled');
     }
   });
 
