@@ -71,7 +71,7 @@ h1, h2, h3, h4 {
 }
 
 .gradient-text-light {
-  color: #a3a3a3;
+  color: #ffffff;
 }
 
 /* Buttons */
@@ -788,7 +788,7 @@ h1, h2, h3, h4 {
 .testimonial-text {
   font-size: 20px;
   line-height: 1.6;
-  color: var(--gray-700);
+  color: var(--white);
   margin-bottom: 24px;
 }
 
