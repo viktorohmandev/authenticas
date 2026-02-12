@@ -64,10 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const codeExamples = {
     curl: `<span class="code-keyword">curl</span> -X POST https://api.authenticas.se/verifyPurchase \\
-  -H <span class="code-string">"Authorization: Bearer YOUR_API_KEY"</span> \\
+  -H <span class="code-string">"Authorization: Bearer DIN_API_NYCKEL"</span> \\
   -H <span class="code-string">"Content-Type: application/json"</span> \\
   -d <span class="code-string">'{
-    "email": "employee@company.com",
+    "email": "anstald@foretag.se",
     "amount": 2500,
     "currency": "SEK"
   }'</span>`,
@@ -75,11 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
     node: `<span class="code-keyword">const</span> response = <span class="code-keyword">await</span> fetch(<span class="code-string">'https://api.authenticas.se/verifyPurchase'</span>, {
   method: <span class="code-string">'POST'</span>,
   headers: {
-    <span class="code-string">'Authorization'</span>: <span class="code-string">\`Bearer \${API_KEY}\`</span>,
+    <span class="code-string">'Authorization'</span>: <span class="code-string">\`Bearer \${API_NYCKEL}\`</span>,
     <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
   },
   body: JSON.stringify({
-    email: <span class="code-string">'employee@company.com'</span>,
+    email: <span class="code-string">'anstald@foretag.se'</span>,
     amount: 2500,
     currency: <span class="code-string">'SEK'</span>
   })
@@ -90,23 +90,23 @@ document.addEventListener('DOMContentLoaded', () => {
 response = requests.post(
     <span class="code-string">'https://api.authenticas.se/verifyPurchase'</span>,
     headers={
-        <span class="code-string">'Authorization'</span>: <span class="code-string">f'Bearer {API_KEY}'</span>,
+        <span class="code-string">'Authorization'</span>: <span class="code-string">f'Bearer {API_NYCKEL}'</span>,
         <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
     },
     json={
-        <span class="code-string">'email'</span>: <span class="code-string">'employee@company.com'</span>,
+        <span class="code-string">'email'</span>: <span class="code-string">'anstald@foretag.se'</span>,
         <span class="code-string">'amount'</span>: 2500,
         <span class="code-string">'currency'</span>: <span class="code-string">'SEK'</span>
     }
 )`,
     
     csharp: `<span class="code-keyword">var</span> client = <span class="code-keyword">new</span> HttpClient();
-client.DefaultRequestHeaders.Add(<span class="code-string">"Authorization"</span>, <span class="code-string">$"Bearer {ApiKey}"</span>);
+client.DefaultRequestHeaders.Add(<span class="code-string">"Authorization"</span>, <span class="code-string">$"Bearer {ApiNyckel}"</span>);
 
 <span class="code-keyword">var</span> response = <span class="code-keyword">await</span> client.PostAsJsonAsync(
     <span class="code-string">"https://api.authenticas.se/verifyPurchase"</span>,
     <span class="code-keyword">new</span> {
-        email = <span class="code-string">"employee@company.com"</span>,
+        email = <span class="code-string">"anstald@foretag.se"</span>,
         amount = 2500,
         currency = <span class="code-string">"SEK"</span>
     }
